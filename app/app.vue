@@ -1,19 +1,18 @@
 <template>
   <div>
-    <!-- NuxtPage là component đặc biệt để hiển thị nội dung của file trong thư mục pages -->
     <NuxtPage />
   </div>
 </template>
 
 <script setup>
-// Cấu hình SEO cơ bản cho toàn app
+// Configuration SEO de base pour l'ensemble de l'application
 useHead({
-  title: 'ChatGPT Clone',
+  title: 'ChatGPT Clone - Assistant',
   meta: [
-    { name: 'description', content: 'ChatGPT Clone using Nuxt 3 & Tailwind CSS' }
+    { name: 'description', content: 'Clone de ChatGPT utilisant Nuxt 3 & Tailwind CSS' }
   ],
   bodyAttrs: {
-    class: 'bg-[#343541]' // Màu nền mặc định để tránh nháy trắng khi load
+    class: 'bg-[#343541]' // Couleur de fond par défaut pour éviter le flash blanc au chargement
   }
 })
 </script>

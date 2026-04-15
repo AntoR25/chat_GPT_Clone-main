@@ -13,7 +13,6 @@ const emit = defineEmits(['close', 'new-chat']);
 
 <template>
   <div>
-    <!-- Overlay Mobile -->
     <div 
       v-if="isOpen" 
       class="fixed inset-0 bg-blue-900/20 z-20 md:hidden transition-opacity backdrop-blur-[2px]"
@@ -28,14 +27,13 @@ const emit = defineEmits(['close', 'new-chat']);
         isOpen ? 'md:w-[280px]' : 'md:w-0 md:overflow-hidden'
       ]"
     >
-      <!-- HEADER -->
       <div class="px-4 pt-4 pb-2 min-w-[280px]">
         <div class="flex items-center justify-between mb-6">
           <div class="flex items-center gap-2 text-blue-700 font-bold text-lg">
             <div class="bg-blue-600 p-1 rounded-md text-white">
               <Activity :size="20" />
             </div>
-            <span>BV Tâm Đức</span>
+            <span>Hôpital Tâm Đức</span>
           </div>
           <button @click="emit('close')" class="md:hidden text-slate-400 hover:text-blue-600">
             <Menu :size="24" />
@@ -47,64 +45,60 @@ const emit = defineEmits(['close', 'new-chat']);
           class="flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-xl transition-all shadow-md shadow-blue-200 font-medium"
         >
           <Plus :size="18" />
-          <span>Tư vấn mới</span>
+          <span>Nouvelle consultation</span>
         </button>
       </div>
 
-      <!-- CONTENT -->
       <div class="flex-1 overflow-y-auto px-3 py-2 custom-scrollbar min-w-[280px]">
         
-        <!-- Quick Actions -->
         <div class="mb-6">
-          <h3 class="px-3 text-xs font-bold text-blue-400 mb-2 uppercase tracking-wider">Tiện ích nhanh</h3>
+          <h3 class="px-3 text-xs font-bold text-blue-400 mb-2 uppercase tracking-wider">Services rapides</h3>
           <button class="flex items-center gap-3 w-full px-3 py-2.5 text-sm text-slate-600 hover:bg-white hover:text-blue-600 hover:shadow-sm rounded-lg transition-all text-left">
             <Calendar :size="18" class="text-blue-500" />
-            <span>Đặt lịch khám</span>
+            <span>Prendre rendez-vous</span>
           </button>
           <button class="flex items-center gap-3 w-full px-3 py-2.5 text-sm text-slate-600 hover:bg-white hover:text-blue-600 hover:shadow-sm rounded-lg transition-all text-left">
             <CreditCard :size="18" class="text-green-500" />
-            <span>Bảng giá dịch vụ</span>
+            <span>Tarifs des services</span>
           </button>
            <button class="flex items-center gap-3 w-full px-3 py-2.5 text-sm text-slate-600 hover:bg-white hover:text-blue-600 hover:shadow-sm rounded-lg transition-all text-left">
             <FileText :size="18" class="text-orange-500" />
-            <span>Tra cứu BHYT</span>
+            <span>Assurance Maladie</span>
           </button>
         </div>
 
-        <!-- History -->
         <div>
-          <h3 class="px-3 text-xs font-bold text-blue-400 mb-2 uppercase tracking-wider">Lịch sử tư vấn</h3>
+          <h3 class="px-3 text-xs font-bold text-blue-400 mb-2 uppercase tracking-wider">Historique</h3>
           
           <button class="flex items-center gap-3 w-full px-3 py-2.5 text-sm bg-white text-blue-700 font-medium rounded-lg mb-2 shadow-sm border border-blue-100 text-left">
             <Stethoscope :size="16" />
-            <span class="truncate">Tư vấn triệu chứng sốt xuất huyết</span>
+            <span class="truncate">Symptômes de la dengue</span>
           </button>
 
           <button class="flex items-center gap-3 w-full px-3 py-2.5 text-sm text-slate-500 hover:bg-white hover:text-blue-600 rounded-lg transition-all text-left group">
             <MessageSquare :size="16" class="shrink-0 group-hover:text-blue-400" />
-            <span class="truncate">Giờ làm việc khoa Nhi...</span>
+            <span class="truncate">Horaires de la pédiatrie...</span>
           </button>
           
           <button class="flex items-center gap-3 w-full px-3 py-2.5 text-sm text-slate-500 hover:bg-white hover:text-blue-600 rounded-lg transition-all text-left group">
              <MessageSquare :size="16" class="shrink-0 group-hover:text-blue-400" />
-            <span class="truncate">Thủ tục nhập viện...</span>
+            <span class="truncate">Procédure d'admission...</span>
           </button>
         </div>
       </div>
 
-      <!-- FOOTER -->
       <div class="p-4 border-t border-blue-100 min-w-[280px] bg-[#f0f9ff]">
         <div class="bg-red-50 border border-red-100 rounded-lg p-3 flex items-start gap-3 mb-3">
             <Phone :size="18" class="text-red-500 mt-0.5 shrink-0" />
             <div>
-                <p class="text-xs font-bold text-red-600">Cấp cứu: 115</p>
-                <p class="text-[10px] text-red-400">Hotline: 1900 1234</p>
+                <p class="text-xs font-bold text-red-600">Urgence : 15</p>
+                <p class="text-[10px] text-red-400">Hotline : 1900 1234</p>
             </div>
         </div>
         
         <button class="flex items-center gap-3 w-full px-2 py-2 text-sm text-slate-600 hover:text-blue-600 transition-colors">
           <Settings :size="18" />
-          <span>Cài đặt tài khoản</span>
+          <span>Paramètres du compte</span>
         </button>
       </div>
     </aside>
